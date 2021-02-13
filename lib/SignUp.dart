@@ -13,109 +13,111 @@ Color contBtn = Color(0xff00a1d6);
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: background,
-      appBar: AppBar(
-        elevation: 0.0,
+    return SingleChildScrollView(
+      child: Scaffold(
         backgroundColor: background,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 8,top: 8),
-          child: RichText(
-            text: TextSpan(
-                text: 'x',
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w300,
-                    color: xColor
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(
-                        builder: (context) => LogIn()
-                    )
-                    );
-                  }
-            ),
-          ),
-        ),
-        title: Text('Sign Up'),
-      ),
-      body: Column(
-        children: [
-          Container(
-            height: 40,
-            width: MediaQuery.of(context).size.width,
-            color: accInfoColor,
-            child: Padding(
-              padding: const EdgeInsets.only(left:8.0, top: 18),
-              child: Text(
-                'ACCOUNT INFO',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w100
-                ),
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: background,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 8,top: 8),
+            child: RichText(
+              text: TextSpan(
+                  text: 'x',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w300,
+                      color: xColor
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(
+                          builder: (context) => LogIn()
+                      )
+                      );
+                    }
               ),
             ),
           ),
-          Container(
-            color: bNavColor,
-            height: MediaQuery.of(context).size.height *0.6,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              children: [
-                textField('First Name', context),
-                Divider(),
-                textField('Last Name', context),
-                Divider(),
-                textField('Username', context),
-                Divider(),
-                textField('Email', context),
-                Divider(),
-                textField('Password', context),
-              ],
-            ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: FlatButton(
-                onPressed: (){},
-                height: 50,
-                color: contBtn,
+          title: Text('Sign Up'),
+        ),
+        body: Column(
+          children: [
+            Container(
+              height: 40,
+              width: MediaQuery.of(context).size.width,
+              color: accInfoColor,
+              child: Padding(
+                padding: const EdgeInsets.only(left:8.0, top: 18),
                 child: Text(
-                  'Continue',
+                  'ACCOUNT INFO',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20
+                    fontSize: 20,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w100
                   ),
                 ),
               ),
             ),
-          ),
-          Row(),
-      ]
-      ),
-      bottomNavigationBar: Container(
-        height: 40,
-        color: bNavColor,
-        child: Center(
-          child: RichText(
-            text: TextSpan(
-                text: 'Already a member? Sign in',
-                style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w300,
-                    color: xColor
+            Container(
+              color: bNavColor,
+              height: MediaQuery.of(context).size.height *0.6,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                children: [
+                  textField('First Name', context),
+                  Divider(),
+                  textField('Last Name', context),
+                  Divider(),
+                  textField('Username', context),
+                  Divider(),
+                  textField('Email', context),
+                  Divider(),
+                  textField('Password', context),
+                ],
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: FlatButton(
+                  onPressed: (){},
+                  height: 50,
+                  color: contBtn,
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20
+                    ),
+                  ),
                 ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(
-                        builder: (context) => LogIn()
-                    )
-                    );
-                  }
+              ),
+            ),
+            Row(),
+        ]
+        ),
+        bottomNavigationBar: Container(
+          height: 40,
+          color: bNavColor,
+          child: Center(
+            child: RichText(
+              text: TextSpan(
+                  text: 'Already a member? Sign in',
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w300,
+                      color: xColor
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(
+                          builder: (context) => LogIn()
+                      )
+                      );
+                    }
+              ),
             ),
           ),
         ),
