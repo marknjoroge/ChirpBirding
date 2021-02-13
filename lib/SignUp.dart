@@ -13,35 +13,35 @@ Color contBtn = Color(0xff00a1d6);
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
+    return Scaffold(
+      backgroundColor: background,
+      appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: background,
-        appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: background,
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 8,top: 8),
-            child: RichText(
-              text: TextSpan(
-                  text: 'x',
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w300,
-                      color: xColor
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(
-                          builder: (context) => LogIn()
-                      )
-                      );
-                    }
-              ),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 8,top: 8),
+          child: RichText(
+            text: TextSpan(
+                text: 'x',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w300,
+                    color: xColor
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(
+                        builder: (context) => LogIn()
+                    )
+                    );
+                  }
             ),
           ),
-          title: Text('Sign Up'),
         ),
-        body: Column(
+        title: Text('Sign Up'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
           children: [
             Container(
               height: 40,
@@ -61,7 +61,6 @@ class SignUp extends StatelessWidget {
             ),
             Container(
               color: bNavColor,
-              height: MediaQuery.of(context).size.height *0.6,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
@@ -98,26 +97,26 @@ class SignUp extends StatelessWidget {
             Row(),
         ]
         ),
-        bottomNavigationBar: Container(
-          height: 40,
-          color: bNavColor,
-          child: Center(
-            child: RichText(
-              text: TextSpan(
-                  text: 'Already a member? Sign in',
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300,
-                      color: xColor
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(
-                          builder: (context) => LogIn()
-                      )
-                      );
-                    }
-              ),
+      ),
+      bottomNavigationBar: Container(
+        height: 40,
+        color: bNavColor,
+        child: Center(
+          child: RichText(
+            text: TextSpan(
+                text: 'Already a member? Sign in',
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                    color: xColor
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(
+                        builder: (context) => LogIn()
+                    )
+                    );
+                  }
             ),
           ),
         ),
