@@ -60,7 +60,7 @@ class SignUp extends StatelessWidget {
           ),
           Container(
             color: bNavColor,
-            height: 306,
+            height: MediaQuery.of(context).size.height *0.6,
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
@@ -129,7 +129,7 @@ class SignUp extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SizedBox(
-          width: 120,
+          width: MediaQuery.of(context).size.width *0.25,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
